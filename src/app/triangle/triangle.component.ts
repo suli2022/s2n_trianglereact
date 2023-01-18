@@ -10,6 +10,7 @@ export class TriangleComponent implements OnInit {
 
   base = new FormControl('');
   height = new FormControl('');
+  area = new FormControl('');
 
   constructor() { }
 
@@ -20,6 +21,7 @@ export class TriangleComponent implements OnInit {
     let height = Number(this.height.value);
     let area =  this.calcArea(base, height);
     console.log(area);
+    this.area.setValue(String(area));
   }
   calcArea(base: number, height: number) {
     return base * height / 2;
